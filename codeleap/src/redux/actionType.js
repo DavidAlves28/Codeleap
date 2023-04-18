@@ -1,0 +1,4 @@
+export const GET_CAREERS = "GET_CAREERS"
+export const DELETE_CAREER = "DELETE_CAREER"
+export const POST_CAREERS = "POST_CAREERS"
+export const PUT_CAREERS = "PUT_CAREERS"
