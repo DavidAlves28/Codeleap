@@ -20,10 +20,9 @@ npm run dev
 # <b> Menu </b>
 
 - [The Project](#project)
-- [Páginas do Projeto](#pages)
+- [Project folders](#pages)
 - [Technologies used](#techused)
-- [CheckList](#checklist)
-- [Agradecimentos](#agradecimentos)
+
 
 <a id="project"></a>
 
