@@ -20,8 +20,10 @@ npm run dev
 # <b> Menu </b>
 
 - [The Project](#project)
-- [Project folders](#pages)
 - [Technologies used](#techused)
+- [Project folders](#pages)
+- [Functionalities](#functionalities)
+
 
 
 <a id="project"></a>
@@ -99,7 +101,7 @@ npm run dev
 
 #
 
-<a id="techused"></a>
+<a id="functionalities"></a>
 
 # functionalities
 
@@ -108,3 +110,4 @@ npm run dev
 - Create a post;
 - Edit just the created post;
 - Delete only created post;
+[Topo](#ancora)
