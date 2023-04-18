@@ -9,7 +9,7 @@ export default function SignUp() {
   const handleOnClick = (e) => {
     setNameUser(e.target.value);
   };
- 
+
   return (
     <Stack
       display={"flex"}

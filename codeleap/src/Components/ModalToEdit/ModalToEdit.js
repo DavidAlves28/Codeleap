@@ -5,7 +5,6 @@ import {
   Input,
   Modal,
   ModalBody,
-  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,
@@ -16,58 +15,52 @@ import {
 import { useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { EditCareer } from "../../redux/actions";
+import { EditCareer, loadUsers } from "../../redux/actions";
 
 export default function ModalToEdit(props) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { user} = props;
+  const { user } = props;
   const dispatch = useDispatch();
-  // state for show Alert
-  const [error, setError] = useState("");
-  
+
   // State to inputs
   const [form, setForm] = useState({
-    id:user.id,
-    username:user.username ,
-    title: "",
-    content: "",
+    id: user.id,
+    username: user.username,
+    title: user.title,
+    content: user.content,
   });
-  const { id,title, content } = form;
+
+  const { title, content } = form;
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e, ) => {
-    e.preventDefault();
-    if (!title || !content) {
-      setError("error");
-    } else {
-      dispatch(EditCareer(id));
-      setError("");
-      setForm({
-        title: "",
-        content: "",
-      });
-    }
+  const handleSubmit = (id, form) => {
+    dispatch(EditCareer(id, form));
+    setForm({
+      id: user.id,
+      username: user.username,
+      title: "",
+      content: "",
+    });
   };
-console.log(form);
+
   return (
     <>
       {/* Button to Edit Card */}
       <FaEdit color="#FFFF" size="22px" onClick={onOpen} cursor={"pointer"} />
 
-      <Modal size="2xl" isOpen={isOpen} onClose={onClose}>
+      <Modal size={["md", "2xl"]} isCentered isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Edit Item</ModalHeader>
-
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>Title</FormLabel>
               <Input
-                value={title}
+                value={title || ""}
                 name="title"
                 onChange={handleInputChange}
                 placeholder="Hello World"
@@ -77,7 +70,7 @@ console.log(form);
             <FormControl mt={4}>
               <FormLabel>Content</FormLabel>
               <Textarea
-                value={content}
+                value={content || ""}
                 name="content"
                 onChange={handleInputChange}
                 maxH="74px"
@@ -96,18 +89,39 @@ console.log(form);
             >
               Cancel
             </Button>
-            <Button
-              rounded={"8px"}
-              w="120px"
-              h="32px"
-              background={"#47B960"}
-              mr={3}
-              color="#FFFF"
-              _hover={"none"}
-              onClick={handleSubmit}
-            >
-              Save
-            </Button>
+
+            {/*  if the title or content is empty , the 'save' button will not work */}
+            {title === "" || content === "" ? (
+              <Button
+                rounded={"8px"}
+                w="120px"
+                h="32px"
+                background={"#47B960"}
+                mr={3}
+                color="#FFFF"
+                _hover={"none"}
+              >
+                Save
+              </Button>
+            ) : (
+              <Button
+                rounded={"8px"}
+                w="120px"
+                h="32px"
+                background={"#47B960"}
+                mr={3}
+                color="#FFFF"
+                _hover={"none"}
+                onClick={() => {
+                  handleSubmit(user.id, form);
+                  // close Modal
+                  onClose();
+                  dispatch(loadUsers());
+                }}
+              >
+                Save
+              </Button>
+            )}
           </ModalFooter>
         </ModalContent>
       </Modal>

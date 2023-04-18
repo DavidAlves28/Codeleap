@@ -21,7 +21,7 @@ export default function CardToCreate() {
   const dispatch = useDispatch();
   // state for show Alert
   const [error, setError] = useState("");
-  
+
   // State to inputs
   const [form, setForm] = useState({
     username: userName,
@@ -43,6 +43,7 @@ export default function CardToCreate() {
       dispatch(createCareers(form));
       setError("");
       setForm({
+        username: userName,
         title: "",
         content: "",
       });

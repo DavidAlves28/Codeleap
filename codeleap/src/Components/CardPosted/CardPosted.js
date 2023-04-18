@@ -1,6 +1,6 @@
 import { Box, Flex, Stack, Text } from "@chakra-ui/react";
-import ModalToEdit from "../ModalForEdit/ModalToEdit";
-import ModalToDelete from "../ModalForDelete/ModalForDelete";
+import ModalToEdit from "../ModalToEdit/ModalToEdit";
+import ModalToDelete from "../ModalToDelete/ModalToDelete";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loadUsers } from "../../redux/actions";
@@ -10,12 +10,17 @@ export default function CardPosted() {
   const { users } = useSelector((state) => state.data);
   const dispatch = useDispatch();
   const { userName } = useParams();
-  const returnIdToUserName = users.filter((user) => {
-    if (user.username === userName) {
-      return user.username;
-    }
-  });
-  
+
+  //returns the data of the created post
+  const returnIdToUserName =
+    users &&
+    users.filter((user) => {
+      if (user.username === userName) {
+        return user;
+      }
+    });
+
+
   useEffect(() => {
     dispatch(loadUsers());
   }, []);
@@ -29,12 +34,7 @@ export default function CardPosted() {
   return (
     <>
       {users &&
-        users
-        /* .filter((user)=>{
-          return user.username === userName
-        })
-         */
-        .map((info) => {
+        users.map((info) => {
           const minutesAgoOrder = JSON.stringify(
             info.created_datetime.slice(14, 16) - date.minutes
           );
@@ -46,7 +46,7 @@ export default function CardPosted() {
             <Box
               w={["99vw", "752px"]}
               m={"0 auto"}
-              h={["", "320px"]}
+              minH={["", "320px"]}
               rounded={"16px "}
               border="1px solid #999999"
               marginTop={"24px"}
@@ -77,13 +77,14 @@ export default function CardPosted() {
                   >
                     {/* button to delete */}
                     {returnIdToUserName.map((user) => {
-                      if (user.username === info.username) {
-                        return <ModalToDelete key={user.id} id={user.id} />;
+                      
+                      if (user.title === info.title) {
+                        return <ModalToDelete key={user.id} user={user} />;
                       }
                     })}
                     {/* button to edit */}
                     {returnIdToUserName.map((user) => {
-                      if (user.username === info.username) {
+                      if (user.title === info.title) {
                         return <ModalToEdit key={user.id} user={user} />;
                       }
                     })}
@@ -91,13 +92,14 @@ export default function CardPosted() {
                 </Flex>
               </Stack>
 
-              <>
+             
                 <Flex
                   textColor={"grey"}
                   fontSize={"18px"}
                   lineHeight={"21px"}
                   fontWeight={"bold"}
                   mt={"24px"}
+                  h={"100%"}
                   justifyContent={"space-between"}
                 >
                   {/* name  to user posted */}
@@ -113,16 +115,17 @@ export default function CardPosted() {
                 <Box minH="100%">
                   {/*  content posted */}
                   <Text
-                    minH="100%"
+                    
                     m="16px 24px 24px 24px "
                     fontWeight={"semibold"}
                     fontSize={"18px"}
                     textAlign={"left"}
+                   
                   >
                     {info.content}
                   </Text>
                 </Box>
-              </>
+             
             </Box>
           );
         })}

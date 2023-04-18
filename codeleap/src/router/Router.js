@@ -9,6 +9,8 @@ export default function Router (){
         <Routes>
             <Route index element={<SignUp/>} />
             <Route path='/Home/:userName' element={<HomePage/>} />
+            {/* error page*/}
+            <Route path='*' element={<SignUp/>} />
         </Routes>
         </BrowserRouter>
     )

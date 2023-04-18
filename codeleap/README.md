@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# CodeLead Engineenring Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Junior Frontend Engineer
 
-## Available Scripts
+### Hello, I'm David Alves Costa.
 
-In the project directory, you can run:
+#### This is my project, I hope it contains all the requested requirements. thank you for being able to participate in this selection process
 
-### `npm start`
+Deploy : https:/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### To start the project inicio , fork it and start it in the correct folder
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+npm install
+npm run dev
+```
 
-### `npm test`
+<a id="ancora"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# <b> Menu </b>
 
-### `npm run build`
+- [The Project](#project)
+- [Páginas do Projeto](#pages)
+- [Technologies used](#techused)
+- [CheckList](#checklist)
+- [Agradecimentos](#agradecimentos)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<a id="project"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# The Project
+## This project consists of making a CRUD application.
+### Desktop 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![home](/src//img/desktopHome.png)
 
-### `npm run eject`
+#
+### Responsive 
+![home](/src//img/signUp.png)
+![home](/src//img/createPost.png)
+![home](/src//img/EditIten.png)
+![home](/src//img/DeleteIten.png)
+#
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<a id="techused"></a>
+## Technologies used
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#
 
-## Learn More
+- React ;
+- Hooks
+- Chakra UI;
+- Axios
+- React-router-dom;
+- Redux ;
+- Redux-logger;
+- Redux-thunk;
+- React-icons
+#
+[Topo](#ancora)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<a id="Pages"></a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project folders
 
-### Code Splitting
+#
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Pages
 
-### Analyzing the Bundle Size
+- SignUp.js;
+- HomePage.js;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Components
 
-### Making a Progressive Web App
+- CardPosted;
+- CardToCreate;
+- Header;
+- ModalToDelete;
+- ModalToEdit;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### redux
 
-### Advanced Configuration
+- store;
+- actions;
+- actionType;
+- reducer;
+- root-reducer;
+### router
+- coordinator;
+- Router
+#
+<a id="techused"></a>
+# functionalities
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+ - Start with name on SignUp page
+- See all posts;
+- Create a post;
+- Edit just the created post;
+- Delete only created post;

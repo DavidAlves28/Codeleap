@@ -13,12 +13,13 @@ import { RiDeleteBin2Fill } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { deleteCareer } from "../../redux/actions";
 export default function ModalToDelete(props) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { id } = props;
-   
-  const handleDelete = (id) => {    
-   dispatch(deleteCareer(id))
+  const { user } = props;
+
+  // function to delete user
+  const handleDelete = (id) => {
+    dispatch(deleteCareer(id));
   };
   return (
     <Box m="0 auto">
@@ -52,7 +53,7 @@ export default function ModalToDelete(props) {
               mr={3}
               color="#FFFF"
               _hover={"none"}
-              onClick={() => handleDelete(id)}
+              onClick={() => handleDelete(user.id)}
             >
               Delete
             </Button>
