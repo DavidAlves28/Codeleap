@@ -6,7 +6,7 @@
 
 #### This is my project, I hope it contains all the requested requirements. thank you for being able to participate in this selection process
 
-Deploy : https:/
+Deploy : https://codeleap-six.vercel.app/
 
 ### To start the project inicio , fork it and start it in the correct folder
 
