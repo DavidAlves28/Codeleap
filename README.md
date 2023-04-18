@@ -28,22 +28,26 @@ npm run dev
 <a id="project"></a>
 
 # The Project
+
 ## This project consists of making a CRUD application.
-### Desktop 
 
-![home](/src//img/desktopHome.png)
+### Desktop
+
+![home](./codeleap/src//img/desktopHome.png)
 
 #
-### Responsive 
-![home](/src//img/signUp.png)
-![home](/src//img/createPost.png)
-![home](/src//img/EditIten.png)
-![home](/src//img/DeleteIten.png)
+
+### Responsive
+
+![home](./codeleap/src//img/signUp.png)
+![home](./codeleap/src//img/createPost.png)
+![home](./codeleap/src//img/EditIten.png)
+![home](./codeleap/src//img/DeleteIten.png)
+
 #
-
-
 
 <a id="techused"></a>
+
 ## Technologies used
 
 #
@@ -57,7 +61,9 @@ npm run dev
 - Redux-logger;
 - Redux-thunk;
 - React-icons
+
 #
+
 [Topo](#ancora)
 
 <a id="Pages"></a>
@@ -86,14 +92,19 @@ npm run dev
 - actionType;
 - reducer;
 - root-reducer;
+
 ### router
+
 - coordinator;
 - Router
+
 #
+
 <a id="techused"></a>
+
 # functionalities
 
- - Start with name on SignUp page
+- Start with name on SignUp page
 - See all posts;
 - Create a post;
 - Edit just the created post;
